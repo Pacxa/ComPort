@@ -1,0 +1,65 @@
+﻿<Window x:Name="wind" x:Class="ComPort.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ComPort"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="748.242" Width="1160.971" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid>
+        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="131" Margin="10,499,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="534"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="24" Margin="11,635,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="534" IsEnabled="False"/>
+        <Button x:Name="button" Content="Выполнить" HorizontalAlignment="Left" Margin="16,664,0,0" VerticalAlignment="Top" Width="121" Click="button_Click" Height="41">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="tbRep" HorizontalAlignment="Left" Height="23" Margin="186,14,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Кол-во повторов команды" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Width="162"/>
+        <TextBox x:Name="comN" HorizontalAlignment="Left" Height="23" Margin="183,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Номер команды" HorizontalAlignment="Left" Margin="70,46,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.763,0.5" Height="28" Width="108"/>
+        <TextBox x:Name="tbP0" HorizontalAlignment="Left" Height="23" Margin="183,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 1" HorizontalAlignment="Left" Margin="70,74,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP1" HorizontalAlignment="Left" Height="23" Margin="183,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 2" HorizontalAlignment="Left" Margin="70,102,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP2" HorizontalAlignment="Left" Height="23" Margin="183,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 3" HorizontalAlignment="Left" Margin="70,130,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP3" HorizontalAlignment="Left" Height="23" Margin="183,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 4" HorizontalAlignment="Left" Margin="70,158,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP4" HorizontalAlignment="Left" Height="23" Margin="183,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 5" HorizontalAlignment="Left" Margin="70,186,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP5" HorizontalAlignment="Left" Height="23" Margin="183,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 6" HorizontalAlignment="Left" Margin="70,214,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP6" HorizontalAlignment="Left" Height="23" Margin="183,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 7" HorizontalAlignment="Left" Margin="70,242,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP7" HorizontalAlignment="Left" Height="23" Margin="183,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 8" HorizontalAlignment="Left" Margin="70,270,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP8" HorizontalAlignment="Left" Height="23" Margin="183,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 9" HorizontalAlignment="Left" Margin="70,298,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP9" HorizontalAlignment="Left" Height="23" Margin="183,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 10" HorizontalAlignment="Left" Margin="70,326,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP10" HorizontalAlignment="Left" Height="23" Margin="183,354,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 11" HorizontalAlignment="Left" Margin="70,354,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP11" HorizontalAlignment="Left" Height="23" Margin="183,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 12" HorizontalAlignment="Left" Margin="70,382,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP12" HorizontalAlignment="Left" Height="23" Margin="183,410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 13" HorizontalAlignment="Left" Margin="70,410,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP13" HorizontalAlignment="Left" Height="23" Margin="183,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 14" HorizontalAlignment="Left" Margin="70,438,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <TextBox x:Name="tbP14" HorizontalAlignment="Left" Height="23" Margin="183,466,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359"/>
+        <Label Content="Параметр 15" HorizontalAlignment="Left" Margin="70,466,0,0" VerticalAlignment="Top" Height="28" Width="108"/>
+        <ListView x:Name="statKSA" HorizontalAlignment="Left" Height="168" Margin="693,10,0,0" VerticalAlignment="Top" Width="446" IsSynchronizedWithCurrentItem="False">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btMac" Content="Запустить макрос" HorizontalAlignment="Left" Margin="859,656,0,0" VerticalAlignment="Top" Width="121" Height="41" Click="btMac_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
