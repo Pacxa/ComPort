@@ -43,8 +43,10 @@ namespace ComPort
             toMessage = password + Convert.ToChar(currID) + "00" + et;
             sd = st + toMessage + getBCC(stringToByte(toMessage)).ToString("X");
             port.WriteLine(sd);
-            System.Threading.Thread.Sleep(100);
-            result = port.ReadExisting().Replace("\u001c", " ").Replace("\u0002", "").Replace("\u0003", "");
+            while (result == "")
+            {
+                result = port.ReadExisting().Replace("\u001c", " ").Replace("\u0002", "").Replace("\u0003", "");
+            }
             statKSA.Items.Add(commands.statusKSA(result));
         }
 
@@ -224,9 +226,6 @@ namespace ComPort
                             else
                                 toMessage = password + Convert.ToChar(currID) + command + et;
 
-                            string toM = password + Convert.ToChar(currID) + "00" + et;
-                            string sd1 = st + toM + getBCC(stringToByte(toM)).ToString("X");
-
                             sd = st + toMessage + getBCC(stringToByte(toMessage)).ToString("X");
 
                             execCommand(sd);  //-------------------------------------------------------Отправка команды
@@ -234,13 +233,14 @@ namespace ComPort
                             if (command == "31") //-----------------------------------------------------------------------------------После 31 команды шлем каоманду 00
                             {
                                 tb2.Text = "";
-                                toMessage = password + "♠" + "03" + "2" + sep + et;
+                                toMessage = password + ":" + "03" + "2" + sep + et;
                                 sd = st + toMessage + getBCC(stringToByte(toMessage)).ToString("X");
                                 tb1.Text += "==>" + sd.Replace("\u001c", "◘") + "\n";
                                 port.WriteLine(sd);
-                                while (tb2.Text == "")
+                                result = "";
+                                while (result == "")
                                 {
-                                    result = port.ReadExisting().Replace("\u001c", " ").Replace("\u0002", "").Replace("\u0003", "");
+                                    result = port.ReadExisting().Replace("\u001c", "◘").Replace("\u0002", "").Replace("\u0003", "");
                                     tb2.Text = "<==" + result;
                                 }
                                 tb1.Text += "<== " + result.Replace("\u001c", "◘") + "\n";
@@ -258,13 +258,22 @@ namespace ComPort
             }
         }
 
+        readonly static System.Text.Encoding WINDOWS1251 = Encoding.GetEncoding(1251);
+        readonly static System.Text.Encoding UTF8 = Encoding.GetEncoding("CP866");
+
+        static string ConvertWin1251ToUTF8(string inString)
+        {
+            return UTF8.GetString(WINDOWS1251.GetBytes(inString));
+        }
+
         private void execCommand(string sd)
         {
             try
             {
                 tb2.Text = "";
 
-                port.WriteLine(sd);
+                //port.WriteLine(sd);
+                port.WriteLine(ConvertWin1251ToUTF8(sd));
                 tb1.Text += "=>" + sd.Replace("\u001c", "◘") + "\n";
 
                 while (tb2.Text == "")
